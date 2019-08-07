@@ -1,0 +1,526 @@
+
+/* 初始化开始 */
+body{
+    height: 3000px;
+    background-color: #efefef;
+}
+
+*{
+margin: 0;
+padding: 0; 
+    }
+
+ul,ol,li {
+        list-style-type: none;
+        
+            }/*清楚表单的默认小点*/
+            
+input {
+        border: 0;/*清除input默认边框*/
+        box-sizing: border-box;
+        
+        }
+    
+.clearfix:before,.clearfix:after
+{/*解决浮动带来的影响*/
+
+			display: table;
+			content: "";
+			
+
+}
+.clearfix:after {	
+	clear: both;		
+	}
+	
+.clearfix {
+	*zoom:1;
+}
+/* 初始化结束 */
+
+.topNavBar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 20px 0 20px 0;
+    transition: all 0.5s;
+    color: #b7b7b7;
+}
+.topNavBar.floating-style{
+    background: #efefef;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0,0, 0.5);
+    z-index: 1;
+    color: #3d4451;
+}
+/* .topNavBar .logo {
+    float: left;
+    text-decoration: none;
+} */
+
+
+
+.topNavBar nav {
+
+    float: right;
+    list-style: none;
+    position: relative;
+    right: 100px;
+    padding-top: 5px;
+ 
+   
+   
+}
+ .topNavBar nav>ul{
+    list-style: none;
+     margin: 0; 
+     padding: 0;
+
+} 
+.topNavBar nav ul li{
+    /* height: 30px; */
+    line-height: 30px;
+    float: left;
+    margin-left: 17px;
+    margin-right: 17px;
+    position: relative;
+}
+
+.topNavBar nav ul li a{
+    
+    font-size: 12px;
+    color:inherit;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 3px solid transparent;
+    padding-top: 9px;
+    padding-bottom: 1px;
+    display: block;
+    position: relative;
+  
+}
+
+.topNavBar nav ul >li.active>a::after,.topNavBar nav ul >li.highlight>a::after{
+
+    /* border-bottom: 3px solid #e06567; */
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    height: 3px;
+    background: #e06567;
+    animation: Slide 0.3s;
+    
+}
+@keyframes Slide{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+.topNavBar .submenu{
+
+    display: none;
+    position: absolute;
+    right: 0;
+   
+    top: 100%;
+    background: white;
+    color: #3d4451;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0,0, 0.5);
+}
+
+.topNavBar .submenu>li{
+    white-space: nowrap;
+    padding: 4px 0;
+    
+}
+.topNavBar li.active>.submenu{
+    display: block;
+    animation: submenuSlide 0.3s;
+}
+@keyframes submenuSlide{
+    0%{
+        margin-right: 100%;
+
+    }
+    100%{
+        margin-right: 0%;
+    }
+}
+
+
+
+
+
+
+.topNavBar .logo {
+    position: relative;
+    left: 100px;
+    height: 43px;
+    line-height: 43px;
+    font-size: 24px;
+    font-family: "Arial Black"; 
+    font-weight: bolder;
+    text-decoration: none;
+    
+}
+
+
+
+.topNavBar .logo .RS {
+   
+    margin-left: 10px;
+    margin-right: 4px; 
+   color: #e06567;
+  
+    
+    
+
+}
+.topNavBar .logo .card {
+    
+    color: #9A9DA2;
+    
+}
+
+
+/* 背景图片 */
+.banner {
+   
+    height: 515px;
+    background: url(./img/img.jpg);
+    background-position: center center;
+     background-size: cover;/*背景自适应 */
+}
+.banner .mask {
+    height: 515px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.userCard {
+
+
+    max-width: 940px;
+    background-color: white;
+    /* border: solid 1px red; */
+    margin: -400px auto 0 auto;
+    
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+
+
+}
+.photo{
+    float: left;
+    margin: 50px  50px  50px  50px;
+}
+.Introduction {
+
+    float: left;
+    margin: 50px 0 0 0;
+    width: 500px;
+}
+
+.Introduction p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    /* font-weight: bold; */
+    color:rgb(120, 122,131);
+}
+
+.Introduction hr {
+
+    margin: 20px 0;
+}
+.Introduction .welcome {
+        display: inline-block;
+        color:white;
+        background-color:#E6686A;
+        padding: 4px 16px 4px 16px;
+        position:relative;
+        margin-bottom:20px; 
+
+}
+.Introduction .welcome div {
+    border: 10px solid transparent;
+    border-left-color:#E6686A;
+    border-top-width: 0px;
+    position:absolute;
+    left: 4px;
+    top: 100%;
+
+}
+.Introduction dl dt,.Introduction dl dd{
+
+    float: left;
+    width: 50%;
+    margin: 10px 0;
+}
+.Introduction dl dt {
+    font-weight: bold;
+}
+.Introduction dl dd {
+
+    color: #9A9DA2;
+}
+.userCard .media {
+
+
+    background-color: #E6686A;
+    text-align: center;
+}
+.userCard svg {
+    width: 40px;
+    height: 40px;
+    fill:white;
+    margin: 10px 0;
+    /* margin: 20px 50px; */
+}
+.userCard a{
+    text-decoration: none;
+    /* border: 1px solid transparent; */
+    width: 60px;
+    height: 60px;
+    display:inline-block;
+    border-radius: 50%;
+    margin: 10px 40px;
+}
+.userCard a:hover{
+    background: #cf5d5f;
+}
+.DownloadButton {
+    display: inline-block;
+    border: 1px solid #CDCFD1;
+    background-color: #efefef;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 15px 40px;
+    text-decoration: none;
+   color: black;
+    font-weight: bold;
+    border-radius:4px;
+    transition: box-shadow 0.1s;
+}
+
+
+.DownloadButton:hover {
+
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+   
+    }
+.DownloadButton-wrapper {
+    text-align: center;
+    margin: 20px 0;
+}
+.selfIntroduction {
+    max-width: 940px;
+    /* background-color: white; */
+    /* border: solid 1px red; */
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   line-height: 2;
+    
+    
+}
+/* 技能栏开始 */
+.Skill h2,.Portfolio h2
+{   
+    /* 大标题 */
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    margin: 30px 0;
+
+
+}
+.Skill .SkillList {
+    /* 技能盒子 */
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding:40px 50px 40px 50px;
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+.Skill ol li {
+ float: left; 
+ width: 48%;
+ margin: 15px 0;
+ box-sizing: border-box;
+
+}
+
+
+.Skill ol li:nth-child(even) {
+    float: right;
+
+}
+
+
+
+.Skill h3
+{
+    /* 小技能标题 */
+color: #3d4451;
+font-size: 14px;
+line-height: 1.1;
+padding-right: 40px; 
+font-weight: none;
+margin: 6px 0;
+}
+
+.Skill .progressBar 
+{
+    /* 进度条 */
+    height: 10px;
+    background-color: #FAE1E1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+
+
+.Skill .progressBar .progress{
+    /*进度*/
+   height: 10px;
+    background-color: #E6686A;
+    border-radius: 4px;
+    width: 50%;
+    transform: translateX(0);
+    transition: all 1s;
+
+}
+.Skill.offset .progress{
+    transform: translateX(-100%);
+}
+/* 技能栏结束 */
+/* 作品栏开始 */
+
+.Portfolio nav {
+    /* 内联元素居中 */
+
+    text-align: center;
+}
+
+.Portfolio nav ol 
+{
+    /* border: 1px solid red; */
+    display: inline-block;/*让ol变为内联元素*/
+    vertical-align: top;
+}
+
+.Portfolio nav ol li{
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+.Portfolio nav ol li:first-child{
+    margin-left: 0;
+}
+.Portfolio .bar {
+  
+    /* border: 1px solid red; */
+    background-color: white;
+    border-radius: 3px;
+}
+.Portfolio .bar .bar-son {
+
+    margin-top: 10px;
+    width: 40%;
+    height: 5px;
+    background-color: #E6686A;
+    border-radius: 3px;
+    transition: all 0.4s;
+
+}
+
+.Portfolio nav {
+    display: inline-block;/*让nav变为内联元素，从而使得bar的长度和nav一样*/
+}
+.Portfolio{
+    text-align: center;
+}
+.Portfolio nav .bar .bar-son.style1
+{
+    width:20%;
+margin-left: 0;
+
+}
+.Portfolio nav .bar .bar-son.style2
+{
+width: 24%;
+margin-left: 70px;
+
+}
+.Portfolio nav .bar .bar-son.style3
+{
+    width: 20%;
+    margin-left: 141px;
+
+}
+.works {
+
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: white; */
+    position: relative;
+    height: 597px;
+    margin-top: 50px;
+    /* box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2); */
+    /* border: 1px solid red; */
+}
+.works .bigger,.works .small
+{
+    position: absolute;
+    /* box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2); */
+}
+h2{
+    margin: 150px auto;
+}
+
+
+.swiper-container {
+    width: 600px;
+    height: 400px;
+}
+
+
+
+[data-x].animate{
+    animation: slideUp 0.5s;
+
+}
+@keyframes slideUp{
+    0%{
+        transform: translateY(150px);
+
+    }
+    100%{
+        transform: translateY(0);
+    }
+
+}
+[data-x].offset{
+    transform: translateY(100px);
+   
+
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
+
