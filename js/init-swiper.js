@@ -1,6 +1,8 @@
 !function () {
-    var mySwiper = new Swiper('.swiper-container', {
-
+   var view = document.querySelector('#mySliders')
+   view.style.border= '1px solid red'
+   var controller=function(view){
+    var mySwiper = new Swiper(view.querySelector('.swiper-container'), {
         loop: true,
         pagination: {
             el: '.swiper-pagination',
@@ -10,8 +12,9 @@
             prevEl: '.swiper-button-prev',
         },
     })
+   }
+   controller.call(null,view);
+ 
 
-}.call
+}.call()
 
-// var view=document.querySelector('#mySliders')
-//     var mySwiper = new Swiper(view.querySelector('.swiper-container'), {
