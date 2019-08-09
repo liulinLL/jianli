@@ -330,7 +330,7 @@ input {
     
 }
 /* 技能栏开始 */
-.Skill h2,.Portfolio h2
+.Skill h2,.Portfolio h2,.message h2
 {   
     /* 大标题 */
     color: #3d4451;
@@ -521,6 +521,21 @@ h2{
 [data-x]{
     transform: translateY(0);
     transition: all 0.5s;
+}
+
+.message div > ol{
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 1px solid #DDD;
+  }
+.message >div> ol > li {
+    padding: 16px;
+    border-bottom: 1px solid #DDD;
+  }
+#postMessageForm {
+    width: 475px;
+margin: 50px auto;
+
 }
 
 
